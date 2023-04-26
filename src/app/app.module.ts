@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -8,6 +7,11 @@ import { NoticiaComponent } from './noticia/noticia.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ContactanosComponent } from './contactanos/contactanos.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { enviroment } from 'src/enviroments/enviroments';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,15 @@ import { ContactanosComponent } from './contactanos/contactanos.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserModule,
+    AngularFireModule.initializeApp(enviroment.firebaseConfig),
+    AngularFireStorageModule,
+    AngularFirestoreModule
+
+    
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/periodico-andriu",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
